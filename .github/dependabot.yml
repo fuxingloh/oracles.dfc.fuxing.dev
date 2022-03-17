@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: "monthly"
+    labels:
+      - "kind/dependencies"
+    ignore:
+      - dependency-name: "defich"
+      - dependency-name: "defichain"
+      - dependency-name: "@defich/*"
+      - dependency-name: "@defichain/*"
+    versioning-strategy: 'increase'
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "kind/dependencies"

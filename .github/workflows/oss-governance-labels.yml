@@ -1,0 +1,23 @@
+name: Governance Labels
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ .github/labels.yml ]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  main:
+    name: OSS
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+
+      - uses: micnncim/action-label-syncer@3abd5ab72fda571e69fffd97bd4e0033dd5f495c
+        with:
+          prune: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

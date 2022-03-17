@@ -1,1 +1,3 @@
-# oracle.dfc.fuxing.dev
+# [Oracle Tracker](https://oracle.dfc.fuxing.dev)
+
+> https://oracle.dfc.fuxing.dev
