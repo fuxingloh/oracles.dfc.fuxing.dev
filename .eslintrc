@@ -1,0 +1,50 @@
+{
+  "root": true,
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "next",
+    "next/core-web-vitals"
+  ],
+  "ignorePatterns": [
+    "*.json",
+    "/next-env.d.ts",
+    "/next-sitemap.js",
+    "/*.config.js"
+  ],
+  "rules": {
+    "@next/next/no-html-link-for-pages": [
+      "error",
+      "./website/src/pages/"
+    ],
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "curly": [
+      "error",
+      "all"
+    ],
+    "brace-style": [
+      "error",
+      "1tbs"
+    ],
+    "func-style": [
+      2,
+      "declaration"
+    ],
+    "no-void": "off",
+    "import/no-default-export": "error",
+    "multiline-ternary": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/pages/**/*.page.tsx",
+        "src/pages/**/*.page.ts"
+      ],
+      "rules": {
+        "import/no-default-export": "off",
+        "import/prefer-default-export": "error"
+      }
+    }
+  ]
+}
