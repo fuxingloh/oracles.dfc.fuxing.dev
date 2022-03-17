@@ -10,6 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@defichain/jellyfish-network": "^2.31.0",
     "@defichain/whale-api-client": "^0.31.0",
     "@headlessui/react": "^1.5.0",
     "@mdx-js/loader": "^2.0.0",
