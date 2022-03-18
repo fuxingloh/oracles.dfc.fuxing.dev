@@ -6,21 +6,11 @@ import { getWhaleApiClient, useWhaleApiClient } from '@components/contexts/Whale
 import { useMemo, useState } from 'react'
 import { debounce } from 'lodash'
 
-interface OraclesPageProps {
+interface IndexPageProps {
   oracles: Oracle[]
 }
 
-export async function getServerSideProps (context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<OraclesPageProps>> {
-  const api = getWhaleApiClient(context)
-
-  return {
-    props: {
-      oracles: await api.oracles.list(200)
-    }
-  }
-}
-
-export default function IndexPage (props: OraclesPageProps): JSX.Element {
+export default function IndexPage (props: IndexPageProps): JSX.Element {
   const [oracles, setOracles] = useState(props.oracles)
   const onChangeDebounceHandler = useMemo(() => debounce(changeHandler, 200), [])
 
@@ -38,7 +28,7 @@ export default function IndexPage (props: OraclesPageProps): JSX.Element {
   }
 
   return (
-    <Container className='py-8'>
+    <Container className='pt-8 pb-24'>
       <div>
         <h1 className='font-semibold text-lg'>
           Total Oracles: {oracles.length}
@@ -56,6 +46,16 @@ export default function IndexPage (props: OraclesPageProps): JSX.Element {
       </div>
     </Container>
   )
+}
+
+export async function getServerSideProps (context: GetServerSidePropsContext): Promise<GetServerSidePropsResult<IndexPageProps>> {
+  const api = getWhaleApiClient(context)
+
+  return {
+    props: {
+      oracles: await api.oracles.list(200)
+    }
+  }
 }
 
 function OracleTable (props: { oracles: Oracle[] }): JSX.Element {
