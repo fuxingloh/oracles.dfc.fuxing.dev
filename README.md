@@ -1,6 +1,6 @@
-# [DeFiChain Oracles](https://oracle.dfc.fuxing.dev)
+# [DeFiChain Oracles](https://oracles.dfc.fuxing.dev)
 
-> https://oracle.dfc.fuxing.dev
+> https://oracles.dfc.fuxing.dev
 
 ## Developing & Contributing
 
