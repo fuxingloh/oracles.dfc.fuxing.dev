@@ -5,6 +5,8 @@ import { getWhaleApiClient } from '@components/contexts/WhaleContext'
 import { PriceTicker } from '@defichain/whale-api-client/dist/api/prices'
 import { format } from 'date-fns'
 import { ApiPagedResponse } from '@defichain/whale-api-client/dist/whale.api.response'
+import { useEffect, useState } from 'react'
+import { StockSplit } from './api/v0/prices/[symbol]/splits.api'
 
 interface PricesPageProps {
   prices: PriceTicker[]
@@ -57,6 +59,12 @@ function PricesTable (props: { prices: PriceTicker[] }): JSX.Element {
                 >
                   Last Published
                 </th>
+                <th
+                  scope='col'
+                  className='px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider'
+                >
+                  INFO
+                </th>
               </tr>
               </thead>
               <tbody className='bg-white divide-y divide-gray-200'>
@@ -102,7 +110,34 @@ function PriceTableRow ({ price: { price } }: { price: PriceTicker }): JSX.Eleme
           {format(price.block.medianTime * 1000, 'MMM dd, hh:mm:ss aa')}
         </div>
       </td>
+      <td className='px-6 py-4 whitespace-nowrap'>
+        <StockSplitInfo symbol={price.token} />
+      </td>
     </tr>
+  )
+}
+
+function StockSplitInfo ({ symbol }: { symbol: string }): JSX.Element {
+  const [splits, setSplits] = useState<StockSplit[]>([])
+
+  useEffect(() => {
+    fetch(`/api/v0/prices/${symbol}/splits`).then(async (res) => {
+      setSplits(await res.json() as any)
+    }).catch(reason => {
+      console.log(reason)
+    })
+  }, [])
+
+  return (
+    <div>
+      {splits.map(split => (
+        <div className='text-sm text-red-500' key={split.description}>
+          <div>{split.description}</div>
+          <div>{format(split.expectedTime * 1000, 'MMM dd, hh:mm:ss aa')}</div>
+          <div>From {split.factor.from} to {split.factor.to}</div>
+        </div>
+      ))}
+    </div>
   )
 }
 
