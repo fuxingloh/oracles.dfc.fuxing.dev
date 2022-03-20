@@ -131,10 +131,10 @@ function StockSplitInfo ({ symbol }: { symbol: string }): JSX.Element {
   return (
     <div>
       {splits.map(split => (
-        <div className='text-sm text-red-500' key={split.description}>
+        <div className='text-sm text-gray-500' key={split.description}>
           <div>{split.description}</div>
-          <div>{format(split.expectedTime * 1000, 'MMM dd, hh:mm:ss aa')}</div>
           <div>From {split.factor.from} to {split.factor.to}</div>
+          <div className='text-red-500 font-medium'>{format(split.expectedTime * 1000, 'dd MMM yyyy')}</div>
         </div>
       ))}
     </div>
