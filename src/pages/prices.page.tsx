@@ -14,7 +14,7 @@ export default function PricesPage ({ prices }: PricesPageProps): JSX.Element {
   return (
     <Container className='pt-8 pb-24'>
       <div>
-        <h1 className='font-semibold text-lg my-6'>
+        <h1 className='font-semibold text-lg mb-6'>
           Total Prices: {prices.length}
         </h1>
 
