@@ -1,6 +1,10 @@
-# [DeFiChain Oracles](https://oracles.dfc.fuxing.dev)
+# [oracles.dfc.fuxing.dev](https://oracles.dfc.fuxing.dev)
 
-> https://oracles.dfc.fuxing.dev
+`oracles.dfc.fuxing.dev` is an open-source web app that is developed by the community of developers and researchers to
+understand the oracle network built on DeFiChain Native network. This is a **personal project** created and funded
+by [@fuxingloh](https://github.com/fuxingloh), please use at your own risk.
+
+Alternatively please use [defiscan.live/oracles](https://defiscan.live/oracles) instead.
 
 ## Developing & Contributing
 
