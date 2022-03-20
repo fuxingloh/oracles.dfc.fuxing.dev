@@ -129,13 +129,13 @@ function OracleTableRow ({ oracle }: { oracle: Oracle }): JSX.Element {
       <td className='px-6 py-4 whitespace-nowrap'>
         <div className='text-sm text-gray-900'>{oracle.weightage}</div>
       </td>
-      <td className='px-6 py-4 whitespace-nowrap'>
+      <td className='px-6 py-3 whitespace-nowrap'>
         <div className='flex flex-wrap -m-1'>
           {oracle.priceFeeds.map(feed => {
             return (
               <div
                 key={`${feed.token} - ${feed.currency}`}
-                className='m-1 px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-900'
+                className='m-0.5 px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-900'
               >
                 {feed.token}/{feed.currency}
               </div>
