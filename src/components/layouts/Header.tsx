@@ -1,6 +1,6 @@
 import { Container } from '@components/commons/Container'
 import Link from 'next/link'
-import { DFCLogo } from '@components/icons/DFCLogo'
+import { AppLogo } from '@components/icons/AppLogo'
 import { HeaderNetworkMenu } from '@components/layouts/HeaderNetworkMenu'
 
 const LINKS = [
@@ -22,12 +22,12 @@ export function Header (): JSX.Element {
           <div className='flex items-center justify-between'>
             <Link href={{ pathname: '/' }} passHref>
               <a className='flex items-center cursor-pointer hover:text-primary-500'>
-                <DFCLogo className='w-8 h-full' />
-                <h6 className='ml-1 text-md font-semibold'>DeFiChain Oracles</h6>
+                <AppLogo className='w-8 h-full' />
+                <h6 className='ml-2 text-md font-semibold'>DeFiChain Oracles</h6>
               </a>
             </Link>
 
-            <div className='flex items-center font-medium text-gray-600 text-sm'>
+            <div className='flex items-center font-semibold text-gray-700 text-sm'>
               {LINKS.map(link => {
                 return (
                   <Link href={{ pathname: link.path }} key={link.title} passHref>
