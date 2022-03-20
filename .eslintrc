@@ -39,7 +39,8 @@
     {
       "files": [
         "src/pages/**/*.page.tsx",
-        "src/pages/**/*.page.ts"
+        "src/pages/**/*.page.ts",
+        "src/pages/**/*.api.ts"
       ],
       "rules": {
         "import/no-default-export": "off",
