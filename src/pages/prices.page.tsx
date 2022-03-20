@@ -118,7 +118,7 @@ function PriceTableRow ({ price: { price } }: { price: PriceTicker }): JSX.Eleme
 }
 
 function StockSplitInfo ({ symbol }: { symbol: string }): JSX.Element {
-  const [splits, setSplits] = useState<StockSplit[]>([])
+  const [splits, setSplits] = useState<StockSplit[] | undefined>(undefined)
 
   useEffect(() => {
     fetch(`/api/v0/prices/${symbol}/splits`).then(async (res) => {
@@ -127,6 +127,14 @@ function StockSplitInfo ({ symbol }: { symbol: string }): JSX.Element {
       console.log(reason)
     })
   }, [])
+
+  if (splits === undefined) {
+    return (
+      <div>
+        <div className='text-gray-500'>...</div>
+      </div>
+    )
+  }
 
   return (
     <div>
