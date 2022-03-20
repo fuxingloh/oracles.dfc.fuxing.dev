@@ -15,7 +15,6 @@ export function Default (props: PropsWithChildren<{}>): JSX.Element | null {
         <meta key='viewport' name='viewport' content='user-scalable=no, width=device-width, initial-scale=1' />
         <meta key='apple-mobile-web-app-capable' name='apple-mobile-web-app-capable' content='yes' />
 
-        <link rel='icon' href='/favicon.ico' />
         <link rel='icon' type='image/png' sizes='48x48' href='/favicon.png' />
       </Head>
 
