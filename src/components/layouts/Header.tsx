@@ -2,6 +2,7 @@ import { Container } from '@components/commons/Container'
 import Link from 'next/link'
 import { AppLogo } from '@components/icons/AppLogo'
 import { HeaderNetworkMenu } from '@components/layouts/HeaderNetworkMenu'
+import { FaGithub } from 'react-icons/fa'
 
 const LINKS = [
   {
@@ -37,8 +38,12 @@ export function Header (): JSX.Element {
               })}
             </div>
 
-            <div>
+            <div className='flex items-center'>
               <HeaderNetworkMenu />
+              <a className='ml-4 cursor-pointer'
+                 href='https://github.com/fuxingloh/oracles.dfc.fuxing.dev' target='_blank' rel="noreferrer">
+                <FaGithub className='w-6 h-6' />
+              </a>
             </div>
           </div>
         </Container>
