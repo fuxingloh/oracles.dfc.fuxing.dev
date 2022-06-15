@@ -12,7 +12,7 @@
   "dependencies": {
     "@defichain/jellyfish-network": "^2.45.11",
     "@defichain/whale-api-client": "^2.45.11",
-    "@headlessui/react": "^1.5.0",
+    "@headlessui/react": "^1.6.4",
     "@mdx-js/loader": "^2.1.1",
     "@next/mdx": "^12.1.6",
     "@tailwindcss/line-clamp": "^0.3.1",
